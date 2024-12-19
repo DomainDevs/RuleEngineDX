@@ -1,0 +1,30 @@
+[
+  {
+    "Name": "CustomerValidation",
+    "Rules": [
+      {
+        "Id": "R001",
+        "Name": "AgeValidation",
+        "IsActive": true,
+        "Conditions": [
+          { "Expression": "input.Age >= 18" }
+        ],
+        "Actions": [
+          { "Name": "ApproveCustomer" }
+        ]
+      },
+      {
+        "Id": "R002",
+        "Name": "MembershipValidation",
+        "IsActive": false,
+        "Conditions": [
+          { "Expression": "input.IsMember == true" }
+        ],
+        "Actions": [
+          { "Name": "ApplyDiscount" }
+        ]
+      }
+
+    ]
+  }
+]
