@@ -16,15 +16,80 @@
       {
         "Id": "R002",
         "Name": "MembershipValidation",
-        "IsActive": false,
+        "IsActive": true,
         "Conditions": [
           { "Expression": "input.IsMember == true" }
         ],
         "Actions": [
           { "Name": "ApplyDiscount" }
         ]
+      },
+      {
+        "Id": "R003",
+        "Name": "RangeValidation",
+        "IsActive": true,
+        "Conditions": [
+          { "Expression": "input.Age >= 25 && input.Age <= 40" }
+        ],
+        "Actions": [
+          { "Name": "SpecialOffer" }
+        ]
+      },
+      {
+        "Id": "R004",
+        "Name": "EqualityValidation",
+        "IsActive": true,
+        "Conditions": [
+          { "Expression": "input.Country == \"USA\"" }
+        ],
+        "Actions": [
+          { "Name": "AllowFreeShipping" }
+        ]
+      },
+      {
+        "Id": "R005",
+        "Name": "InequalityValidation",
+        "IsActive": true,
+        "Conditions": [
+          { "Expression": "input.Age != 30" }
+        ],
+        "Actions": [
+          { "Name": "ApplyAlternativeOffer" }
+        ]
+      },
+      {
+        "Id": "R006",
+        "Name": "ComplexNestedRule",
+        "IsActive": true,
+        "Conditions": [
+          { "Expression": "(input.Age > 20 && input.IsMember == true) || input.Country == \"Canada\"" }
+        ],
+        "Actions": [
+          { "Name": "PremiumMembershipOffer" }
+        ]
+      },
+      {
+        "Id": "R007",
+        "Name": "InValidation",
+        "IsActive": true,
+        "Conditions": [
+          { "Expression": "new[] { \"Admin\", \"User\", \"Guest\" }.Contains(input.Role)" }
+        ],
+        "Actions": [
+          { "Name": "AssignRoleDiscount" }
+        ]
+      },
+      {
+        "Id": "R008",
+        "Name": "BetweenValidation",
+        "IsActive": true,
+        "Conditions": [
+          { "Expression": "input.Salary >= 50000 && input.Salary <= 100000" }
+        ],
+        "Actions": [
+          { "Name": "MidLevelBonus" }
+        ]
       }
-
     ]
   }
 ]
